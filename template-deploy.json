@@ -1,0 +1,18 @@
+{
+    "family": "nodejs-app",
+    "containerDefinitions": [
+        {
+            "image": "261429387248.dkr.ecr.us-east-1.amazonaws.com/%PROJECT%:latest",
+            "name": "devops-test-app-%PROJECT%",
+            "cpu": 1,
+            "memory": 256,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": %PORT_NUMBER%,
+                    "hostPort": 80
+                }
+            ]
+        }
+    ]
+}
