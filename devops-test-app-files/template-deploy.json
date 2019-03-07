@@ -1,0 +1,24 @@
+{
+    "family": "nodejs-app-files",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::261429387248:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "devops-test-app-files",
+            "image": "261429387248.dkr.ecr.us-east-1.amazonaws.com/devops-test-app-files:latest",
+            "portMappings": [
+                {
+                    "containerPort": 3081,
+                    "hostPort": 3081,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+}
