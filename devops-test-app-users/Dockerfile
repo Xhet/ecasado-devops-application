@@ -1,7 +1,7 @@
 FROM node:8.15.1-alpine
 
-ARGV users_USERNAME
-ARGV users_PASSWORD
+ARG users_USERNAME
+ARG users_PASSWORD
 
 ENV DEVOPS_TEST_DATABASE_NAME='devops_test' \
     DEVOPS_TEST_DATABASE_HOST='mydb.cxwjc5rwxold.us-west-2.rds.amazonaws.com' \

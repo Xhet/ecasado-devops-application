@@ -1,7 +1,7 @@
 FROM node:8.15.1-alpine
 
-ARGV files_USERNAME
-ARGV files_PASSWORD
+ARG files_USERNAME
+ARG files_PASSWORD
 
 ENV DEVOPS_TEST_BACKEND_AWS_USER_BUCKET_NAME='ecasado-devops-application' \
     DEVOPS_TEST_BACKEND_AWS_REGION='us-west-2'\
