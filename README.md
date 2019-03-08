@@ -140,7 +140,10 @@ Install docker-compose
 ``` bash
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
-#### To run both projects, execute in linux terminal:
+
+## Project can be run in one of two ways:
+### Running both endpoints
+#### execute in linux terminal:
 
  - Edit `.env` file with credentials provided  database/AWS credentials
 ```bash
@@ -150,7 +153,8 @@ $ vim .env
 ```bash
 $ run_all.sh
 ```
-#### To deploy specific endpoint, please execute the following commands in your terminal:
+### Run specific endpoint
+#### execute the following commands in your terminal:
  - Checkout specific endpoint directory 
 ```bash
 #CREATE AN EMPTY REPO
