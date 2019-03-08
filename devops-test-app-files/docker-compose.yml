@@ -1,0 +1,13 @@
+version: '3'
+services:
+  deploy-node-files:
+    container_name: files-endpoint
+    build:
+      context: ./
+      args:
+        files_USERNAME: "${AWS_USERNAME}"
+        files_PASSWORD: "${AWS_PASSWORD}"
+      dockerfile: Dockerfile
+    ports:
+      - "3081:3081"
+

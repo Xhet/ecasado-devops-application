@@ -11,5 +11,5 @@ ENV DEVOPS_TEST_DATABASE_NAME='devops_test' \
 COPY . .
 RUN npm install
 RUN npm run migrate-up
-ENTRYPOINT 3082
+#ENTRYPOINT 3082
 CMD ["npm", "run", "start"]

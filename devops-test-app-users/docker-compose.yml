@@ -1,0 +1,12 @@
+version: '3'
+services:
+  deploy-node-users:
+    container_name: users-endpoint
+    build:
+      context: ./
+      args:
+        users_USERNAME: "${DB_USERNAME}"
+        users_PASSWORD: "${DB_PASSWORD}"
+      dockerfile: Dockerfile
+    ports:
+      - "3082:3082"
