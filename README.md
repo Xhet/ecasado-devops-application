@@ -16,11 +16,14 @@ The application consist in two general endpoints, these are `GET /users` and `GE
 
 | HTTP method | Endpoint |
 | ---- | --------------- |
-| GET | /(<users/files>) |
-| GET | /(<users/files>)/version |
-| GET | /(<users/files>)/health |
-| GET | /(<users/files>)/ready |
-
+| GET | /files> |
+| GET | /files/version |
+| GET | /files/health |
+| GET | /files/ready |
+| GET | /users |
+| GET | /users/version |
+| GET | /users/health |
+| GET | /users/ready |
 ### Endpoints description
 
 * `GET 3082:/users`
