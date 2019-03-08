@@ -1,7 +1,7 @@
 {
     "family": "nodejs-app-users", 
     "networkMode": "awsvpc",
-    "executionRoleArn": "arn:aws:iam::261429387249:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::261429387248:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
             "name": "devops-test-app-users", 
