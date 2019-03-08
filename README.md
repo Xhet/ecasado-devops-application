@@ -23,7 +23,7 @@ The application consist in two general endpoints, these are `GET /users` and `GE
 
 ### Endpoints description
 
-* `GET <ENDPOINT_PORT>:/(<users/files>)`
+* `GET 3082:/users`
 
 This endpoint returns a fixed number of users (2) registered in the postgres database with the following structure:
 
@@ -52,6 +52,22 @@ This endpoint returns a fixed number of users (2) registered in the postgres dat
 }
 ```
 
+* `GET 3081:/files`
+
+This endpoint returns the total number of items and the name of the files stored in a s3 bucket with the following structure:
+
+```json
+{
+"meta": {
+        "count" : 1
+},
+
+"data": {
+                "number_of_items": 2,
+                "filenames": ["foo.txt", "bar.txt"]
+        }
+}
+```
 
 * `GET <ENDPOINT_PORT>:/version`
 
@@ -110,17 +126,23 @@ You will need the following tools to operate over `devops-test-app`:
 
 - `nodejs` = 8.11
 - `postgres` >= 9.4
-- `docker`
--  `docker-compose`
 
-### Local development/deployment
- - Install docker-compose
+Local development/deployment
+- 
+#### Requirements
+
+You will need the following tools to `build/deploy` over `devops-test-app`:
+
+- `docker` >= 18.06.1
+- `docker-compose` >= 1.23.2
+
+Install docker-compose
 ``` bash
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
-To run both projects, execute in linux terminal:
- -
- - Edit env file with credentials provided or your own database/AWS credentials
+#### To run both projects, execute in linux terminal:
+
+ - Edit `.env` file with credentials provided  database/AWS credentials
 ```bash
 $ vim .env
 ```
@@ -128,7 +150,7 @@ $ vim .env
 ```bash
 $ run_all.sh
 ```
-To run specific localy, please execute the following commands in your terminal:
+#### To deploy specific endpoint, please execute the following commands in your terminal:
  - Checkout specific endpoint directory 
 ```bash
 #CREATE AN EMPTY REPO
@@ -147,7 +169,7 @@ $ git pull origin master
 ```bash
 $ cd devops-test-app-<users/files>
 ```
-- Edit `.env` root directory
+- Edit `.env` file with credentials provided database/AWS credentials
 
 ```bash
 $ vim .env
@@ -156,7 +178,7 @@ $ vim .env
 - Run the start script
 
 ```bash
-$ ./<run_files/run_users>.sh
+$ <run_files/run_users>.sh
 ```
 
 ### URL testing
