@@ -1,5 +1,5 @@
 # devops-test-app
-# Users endpoint
+# NodeJS endpoints
 A basic NodeJs backend application created for the devops test.
 
 ### General description
@@ -128,7 +128,7 @@ $ vim .env
 ```bash
 $ run_all.sh
 ```
-To run this application localy, please execute the following commands in your terminal:
+To run specific localy, please execute the following commands in your terminal:
  - Checkout specific endpoint directory 
 ```bash
 #CREATE AN EMPTY REPO
@@ -147,11 +147,16 @@ $ git pull origin master
 ```bash
 $ cd devops-test-app-<users/files>
 ```
-
-- Run the script
+- Edit `.env` root directory
 
 ```bash
-$ ./start_service.sh
+$ vim .env
+```
+
+- Run the start script
+
+```bash
+$ ./<run_files/run_users>.sh
 ```
 
 ### URL testing
@@ -194,5 +199,4 @@ $ curl -vv http://localhost:3082/users
 | DEVOPS_TEST_BACKEND_AWS_SECRET_KEY | The aws api secret key used for devops-test | provided by .env file | yes |
 | DEVOPS_TEST_BACKEND_AWS_PREFIX | The s3 prefix where files are stored | --------- | no |
 | DEVOPS_TEST_BACKEND_AWS_REGION | The aws region where | us-east-1 | yes |
-
 
