@@ -11,5 +11,5 @@ ENV DEVOPS_TEST_BACKEND_AWS_USER_BUCKET_NAME='ecasado-devops-application' \
 
 COPY . .
 RUN npm install
-ENTRYPOINT 3081
+#ENTRYPOINT 3081
 CMD ["npm", "run", "start"]
